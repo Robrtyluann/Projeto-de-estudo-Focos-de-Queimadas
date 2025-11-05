@@ -1,0 +1,13 @@
+----Colocar o programa para funcionar-------------------
+
+ligar o venv 
+1- source .venv/bin//activate
+
+faz o servidor 
+2- uvicorn main:app --reload
+
+
+/Exeção/:  as vezes vc pode estar dentro do Backend e não o comando (source .venv/bin//activate) não vai dar certo
+no caso execute o 'cd ..' para sair dela ai depois execute o comando "source .venv/bin//activate"
+
+4- depois no arquivo "index.html" na pasta "mapa" abra o live server

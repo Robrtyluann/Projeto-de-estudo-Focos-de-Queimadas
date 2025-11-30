@@ -1,11 +1,34 @@
     //Criação do mapa
-    const map = L.map('map').setView([-14.235, -51.9253], 5);
+    //const map = L.map('map').setView([-14.235, -51.9253], 5);
 
     //adicionando o fundo 'mapa'
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const ruas = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+    });
+
+    //opção 2 satelite 
+    const satelite = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}', {
+        minZoom: 0,
+        maxZoom: 20,
+        attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver | &copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap contributors',
+        ext: 'jpg'
+    });
+
+    // criação do map 
+
+    const map = L.map('map',{
+        center: [-14.235, -51.9253],
+        zoom: 5,
+        layers: [ruas]
+    });
+
+    const baseMaps = {
+        "Topográfico": ruas,
+        "satelite": satelite
+    };
+
+    L.control.layers(baseMaps).addTo(map);
 
     const markerCluster = L.markerClusterGroup();
 

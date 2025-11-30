@@ -34,7 +34,7 @@ def get_focos_de_queimadas():
 
         if not links_csv:
             raise Exception("Nenhum arquivo CSV foi encontrado no diretório.")
-
+    
         # pega o mais recente da lista
         nome_arquivo_recente = links_csv[-2]
 

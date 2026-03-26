@@ -15,7 +15,7 @@ Carga/Distribuição (FastAPI): Os dados tratados são expostos através de uma 
 
 Visualização (JS + Leaflet): O frontend consome a API e plota os pontos em um mapa interativo com suporte a camadas de satélite e agrupamento de marcadores.
 
-#Tecnologias Utilizadas
+# Tecnologias Utilizadas
 Backend & Data Engineering
 Python 3.x
 

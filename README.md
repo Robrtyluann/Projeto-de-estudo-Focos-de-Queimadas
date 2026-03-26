@@ -56,6 +56,7 @@ pip install fastapi uvicorn beautifulsoup4 pandas httpx lxml
 
 # Inicie o servidor
 uvicorn main:app --reload
+
 3. Acessando o Frontend
 Basta abrir o arquivo index.html no seu navegador ou rodar através de um "Live Server". A aplicação irá buscar automaticamente os dados do backend rodando em localhost:8000.
 

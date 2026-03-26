@@ -1,8 +1,6 @@
 # Monitoramento de Focos de Queimadas - América do Sul
 Este projeto é uma aplicação Full Stack de engenharia de dados e geoprocessamento. Ele automatiza a coleta de dados brutos de satélite, processa essas informações e as exibe em um mapa interativo em tempo real.
 
-Nota de Carreira: Este projeto foi o diferencial técnico que utilizei para demonstrar conceitos de ETL e Consumo de APIs durante o processo seletivo que me garantiu minha vaga atual na BBTS.
-
 # Objetivo
 O sistema foi criado para centralizar dados de focos de calor espalhados em diretórios públicos e transformá-los em informações visuais úteis para análise geográfica, utilizando tecnologias que são padrão no mercado de tecnologia.
 

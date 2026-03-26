@@ -1,12 +1,12 @@
-🔥 Monitoramento de Focos de Queimadas - América do Sul
+# Monitoramento de Focos de Queimadas - América do Sul#
 Este projeto é uma aplicação Full Stack de engenharia de dados e geoprocessamento. Ele automatiza a coleta de dados brutos de satélite, processa essas informações e as exibe em um mapa interativo em tempo real.
 
 Nota de Carreira: Este projeto foi o diferencial técnico que utilizei para demonstrar conceitos de ETL e Consumo de APIs durante o processo seletivo que me garantiu minha vaga atual na BBTS.
 
-🎯 Objetivo
+# Objetivo#
 O sistema foi criado para centralizar dados de focos de calor espalhados em diretórios públicos e transformá-los em informações visuais úteis para análise geográfica, utilizando tecnologias que são padrão no mercado de tecnologia.
 
-🏗️ Arquitetura do Sistema (Fluxo de Dados)
+# Arquitetura do Sistema (Fluxo de Dados)#
 O projeto segue o modelo ETL (Extract, Transform, Load):
 
 Extração (Python + BeautifulSoup): O backend acessa o servidor de dados do INPE, navega pelos diretórios e identifica o arquivo CSV diário mais recente de forma dinâmica.
@@ -17,7 +17,7 @@ Carga/Distribuição (FastAPI): Os dados tratados são expostos através de uma 
 
 Visualização (JS + Leaflet): O frontend consome a API e plota os pontos em um mapa interativo com suporte a camadas de satélite e agrupamento de marcadores.
 
-🚀 Tecnologias Utilizadas
+# Tecnologias Utilizadas
 Backend & Data Engineering
 Python 3.x
 
@@ -38,7 +38,7 @@ MarkerCluster: Otimização de performance para renderizar milhares de pontos si
 
 HTML5 & CSS3: Interface e design responsivo.
 
-⚙️ Como Executar o Projeto
+# Como Executar o Projeto
 1. Requisitos
 Python instalado.
 

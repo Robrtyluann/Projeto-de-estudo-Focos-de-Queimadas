@@ -1,37 +1,69 @@
-# API de Monitoramento de Focos de Queimadas no Brasil
+🔥 Monitoramento de Focos de Queimadas - América do Sul
+Este projeto é uma aplicação Full Stack de engenharia de dados e geoprocessamento. Ele automatiza a coleta de dados brutos de satélite, processa essas informações e as exibe em um mapa interativo em tempo real.
 
-Este é um projeto de estudo desenvolvido para coletar, processar e disponibilizar dados sobre focos de queimadas no Brasil através de uma API.
+Nota de Carreira: Este projeto foi o diferencial técnico que utilizei para demonstrar conceitos de ETL e Consumo de APIs durante o processo seletivo que me garantiu minha vaga atual na BBTS.
 
-## 🎯 Objetivo
+🎯 Objetivo
+O sistema foi criado para centralizar dados de focos de calor espalhados em diretórios públicos e transformá-los em informações visuais úteis para análise geográfica, utilizando tecnologias que são padrão no mercado de tecnologia.
 
-O objetivo deste projeto é criar um sistema que centralize informações de queimadas (obtidas via web scraping) e as exponha através de uma API RESTful, permitindo que outros sistemas ou ferramentas de análise (como o Power BI) possam consumir esses dados facilmente.
+🏗️ Arquitetura do Sistema (Fluxo de Dados)
+O projeto segue o modelo ETL (Extract, Transform, Load):
 
-## 🚀 Tecnologias Utilizadas
+Extração (Python + BeautifulSoup): O backend acessa o servidor de dados do INPE, navega pelos diretórios e identifica o arquivo CSV diário mais recente de forma dinâmica.
 
-* **Python:** Linguagem principal do projeto.
-* **FastAPI:** Framework utilizado para a construção da API.
-* **BeautifulSoup:** Usada para fazer o web scraping dos dados.
-* **Pandas:** Para manipulação e limpeza dos dados.
-* **Uvicorn:** Servidor para rodar a API.
+Transformação (Pandas): O arquivo é lido e processado em memória. O sistema filtra as colunas necessárias (lat, lon, municipio, estado) e realiza o data cleaning (remoção de valores nulos).
 
-## ⚙️ Como Rodar o Projeto
+Carga/Distribuição (FastAPI): Os dados tratados são expostos através de uma API RESTful em formato JSON.
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/Robrtyluann/Projeto-de-estudo-Focos-de-Queimadas.git
-    cd Projeto-de-estudo-Focos-de-Queimadas
-    ```
+Visualização (JS + Leaflet): O frontend consome a API e plota os pontos em um mapa interativo com suporte a camadas de satélite e agrupamento de marcadores.
 
-2.  **Instale as dependências:**
-    ```bash
-    pip install fastapi uvicorn beautifulsoup4 pandas
-    ```
+🚀 Tecnologias Utilizadas
+Backend & Data Engineering
+Python 3.x
 
-3.  **Execute o servidor:**
-    *(Ajuste este comando para como o seu projeto roda, por exemplo, `python main.py`)*
-    ```bash
-    uvicorn main:app --reload
-    ```
+FastAPI: Criação da API de alta performance.
 
-4.  **Acesse a documentação:**
-    Abra seu navegador em `http://127.0.0.1:8000/docs` para ver a documentação automática do FastAPI.
+Pandas: Manipulação e tratamento de grandes volumes de dados.
+
+Httpx & BeautifulSoup4: Web Scraping e requisições HTTP.
+
+Uvicorn: Servidor ASGI.
+
+Frontend
+JavaScript (Vanilla): Lógica de consumo e renderização.
+
+Leaflet.js: Biblioteca de mapas interativos.
+
+MarkerCluster: Otimização de performance para renderizar milhares de pontos simultaneamente.
+
+HTML5 & CSS3: Interface e design responsivo.
+
+⚙️ Como Executar o Projeto
+1. Requisitos
+Python instalado.
+
+Navegador moderno.
+
+2. Configurando o Backend
+Bash
+
+# Clone o repositório
+git clone https://github.com/Robrtyluann/Projeto-de-estudo-Focos-de-Queimadas.git
+
+# Entre na pasta
+cd Projeto-de-estudo-Focos-de-Queimadas
+
+# Instale as bibliotecas necessárias
+pip install fastapi uvicorn beautifulsoup4 pandas httpx lxml
+
+# Inicie o servidor
+uvicorn main:app --reload
+3. Acessando o Frontend
+Basta abrir o arquivo index.html no seu navegador ou rodar através de um "Live Server". A aplicação irá buscar automaticamente os dados do backend rodando em localhost:8000.
+
+💡 Diferenciais Implementados
+Consumo de Dados Vivos: O projeto não usa dados estáticos; ele busca o arquivo mais recente no servidor do INPE a cada execução.
+
+Performance: Uso de clusters no mapa para evitar travamentos do navegador.
+
+Tratamento de Exceções: Sistema de logs no backend e alertas no frontend para falhas de conexão.
